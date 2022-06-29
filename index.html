@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Generator choinek</title>
+    <link rel='stylesheet' href='wyglad.css' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="description" content="Generator textowych choinek!">
+    <link rel="icon" href="favicon.svg">
+</head>
+<body><main>
+    <div class = 'info'>Skopiowano!</div>
+    <div class = 'blok'>
+        <div class = 'pole'>
+            <div class = 'wizual'>
+                <div id = 'kropka'></div>
+                <div class = 'linia' id = 'gornyP'></div>
+                <div class = 'linia' id = 'gornyL'></div>
+                <div class = 'linia' id = 'dolnyP'></div>
+                <div class = 'linia' id = 'dolnyL'></div>
+                <div class = 'linia' id = 'pienG'></div>
+                <div class = 'linia' id = 'pienL'></div>
+                <input id = 'a' type = 'range' min = '5' max = '41' step = '2'>
+                <input id = 'b' type = 'range' min = '3' max = '31' step = '2'>
+                <input id = 'c' type = 'range' min = '5' max = '51' step = '2'>
+                <input id = 'd' type = 'range' min = '1' max = '10' step = '1'>
+                <input id = 'e' type = 'range' min = '1' max = '11' step = '2'>
+        </div></div>
+        <button onclick = 'history.back()'>Wstecz</button>
+    </div>
+    <div class = 'blok'>
+        <button onclick = 'skopiuj()'>Skopiuj</button>
+        <textarea class = 'pole' id = 'wynik' readonly></textarea>
+    </div>
+    </main>
+    <script type='text/javascript' src = 'skrypt.js'></script>
+</body>
+</html>
