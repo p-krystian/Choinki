@@ -1,5 +1,5 @@
 # Christmas tree generator
-Simple generator of Christmas trees with dots and hashes.
+Simple generator of Christmas trees with dots and hashes.\
 Only work with monospaced fonts.
 
 ## About
