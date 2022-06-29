@@ -1,321 +1,320 @@
 @font-face{
-    src: url("CascadiaMonoPL.ttf");
-    font-family: "Cascadia Mono";
+  src: url("CascadiaMonoPL.ttf");
+  font-family: "Cascadia Mono";
 }
-@keyframes wysun{
-    0%{ transform: translateY(-100px); }
-    10%{ transform: translateY(0px); }
-    90%{ transform: translateY(0px); }
-    100%{ transform: translateY(-100px); }
+@keyframes eject{
+  0%{ transform: translateY(-100px); }
+  10%{ transform: translateY(0px); }
+  90%{ transform: translateY(0px); }
+  100%{ transform: translateY(-100px); }
 }
 *{ box-sizing: border-box; }
 body{
-    background: url('tlo.png') hsl(158 60% 40%);
-    margin: 0;
-    padding: 0;
+  background: url('bg.png') hsl(158 60% 40%);
+  margin: 0;
+  padding: 0;
 }
 main{
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 button{
-    background: hsl(296 70% 18%);
-    display: block;
-    width: 85%;
-    font-size: 2vmax;
-    min-height: 8%;
-    font-family: "Cascadia Mono";
-    border: none;
-    color: white;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: letter-spacing 0.15s ease-in-out;
+  background: hsl(296 70% 18%);
+  display: block;
+  width: 85%;
+  font-size: 2vmax;
+  min-height: 8%;
+  font-family: "Cascadia Mono";
+  border: none;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: letter-spacing 0.15s ease-in-out;
 }
 button:hover{ letter-spacing: 5px; }
 .info{
-    min-width: 80vmin;
-    position: fixed;
-    background-color: hsla(0, 0%, 100%, 0.8);
-    border: 3px solid hsl(296 70% 18%);
-    border-radius: 10px;
-    z-index: 1;
-    cursor: default;
-    font-size: 50px;
-    font-family: "Cascadia Mono";
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    top: 10px;
-    color: hsl(296 70% 18%);
-    transform: translateY(-100px);
-    animation-duration: 3s;
+  min-width: 80vmin;
+  position: fixed;
+  background-color: hsla(0, 0%, 100%, 0.8);
+  border: 3px solid hsl(296 70% 18%);
+  border-radius: 10px;
+  z-index: 1;
+  cursor: default;
+  font-size: 50px;
+  font-family: "Cascadia Mono";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  top: 10px;
+  color: hsl(296 70% 18%);
+  transform: translateY(-100px);
+  animation-duration: 3s;
 }
-.blok{
-    display: flex;
-    width: 45vmax;
-    min-width: 500px;
-    height: 45vmax;
-    min-height: 500px;
-    margin: 1vmax;
-    padding: 1vmax;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 20px;
-    box-shadow: 20px 20px 50px hsla(0, 0%, 0%, 0.5);
-    background-color: hsla(0, 0%, 100%, 0.1);
-    overflow: hidden;
-    border-top: 1px solid hsla(0, 0%, 100%, 0.5);
-    border-left: 1px solid hsla(0, 0%, 100%, 0.5);
-    backdrop-filter: blur(5px);
+.block{
+  display: flex;
+  width: 45vmax;
+  min-width: 500px;
+  height: 45vmax;
+  min-height: 500px;
+  margin: 1vmax;
+  padding: 1vmax;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  box-shadow: 20px 20px 50px hsla(0, 0%, 0%, 0.5);
+  background-color: hsla(0, 0%, 100%, 0.1);
+  overflow: hidden;
+  border-top: 1px solid hsla(0, 0%, 100%, 0.5);
+  border-left: 1px solid hsla(0, 0%, 100%, 0.5);
+  backdrop-filter: blur(5px);
 }
-.blok::-webkit-scrollbar-track{ background-color: transparent; }
-.blok::-webkit-scrollbar-thumb{ background-color: hsl(296 70% 18%) }
-.pole{
-    background-color: hsla(0, 0%, 0%, 0.1);
-    backdrop-filter: blur(15px);
-    width: 100%;
-    height: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    border-radius: 15px;
+.block::-webkit-scrollbar-track{ background-color: transparent; }
+.block::-webkit-scrollbar-thumb{ background-color: hsl(296 70% 18%) }
+.field{
+  background-color: hsla(0, 0%, 0%, 0.1);
+  backdrop-filter: blur(15px);
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 15px;
 }
-.wizual{
-    width: 460px;
-    height: 420px;
-    position: relative;
+.visual{
+  width: 460px;
+  height: 420px;
+  position: relative;
 }
-.linia{
-    background-color: white;
-    display: block;
-    position: absolute;
-    width: 70px;
-    height: 10px;
-    border-radius: 5px;
+.line{
+  background-color: white;
+  display: block;
+  position: absolute;
+  width: 70px;
+  height: 10px;
+  border-radius: 5px;
 }
-.wizual > input{
-    position: absolute;
-    width: 70px;
-    height: 10px;
-    -webkit-appearance: none;
-    appearance: none;
-    outline: none;
-    border-radius: 5px;
-    margin: 0;
-    padding: 0;
+.visual > input{
+  position: absolute;
+  width: 70px;
+  height: 10px;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
 }
 
-.wizual > input::-moz-range-thumb{
-    -moz-appearance: none;
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    background: hsl(296 70% 18%);
-    cursor: pointer;
-    outline: none;
-    border: none;
-    border-radius: 5px;
+.visual > input::-moz-range-thumb{
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: hsl(296 70% 18%);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 5px;
 }
-.wizual > input::-webkit-slider-thumb{
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    background: hsl(296 70% 18%);
-    cursor: pointer;
-    outline: none;
-    border: none;
-    border-radius: 5px;
+.visual > input::-webkit-slider-thumb{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: hsl(296 70% 18%);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 5px;
 }
-#kropka{
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    left: 222.5px;
-    background: hsl(296 70% 18%);
-    bottom: 390px;
-    border-radius: 5px;
-    z-index: 1;
+#dot{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 222.5px;
+  background: hsl(296 70% 18%);
+  bottom: 390px;
+  border-radius: 5px;
+  z-index: 1;
 }
-#gornyL{
-    bottom: 307px;
-    transform: rotate(-55deg);
-    left: 56px;
-    width: 220px;
+#topL{
+  bottom: 307px;
+  transform: rotate(-55deg);
+  left: 56px;
+  width: 220px;
 }
-#gornyP{
-    bottom: 307px;
-    transform: rotate(55deg);
-    left: 184px;
-    width: 220px;
+#topR{
+  bottom: 307px;
+  transform: rotate(55deg);
+  left: 184px;
+  width: 220px;
 }
 #a{
-    bottom: 220px;
-    width: 260px;
-    left: 100px;
+  bottom: 220px;
+  width: 260px;
+  left: 100px;
 }
 #b{
-    bottom: 200px;
-    width: 200px;
-    left: 130px;
+  bottom: 200px;
+  width: 200px;
+  left: 130px;
 }
-#dolnyL{
-    bottom: 143px;
-    transform: rotate(-67deg);
-    left: 42px;
-    width: 134px;
+#bottomL{
+  bottom: 143px;
+  transform: rotate(-67deg);
+  left: 42px;
+  width: 134px;
 }
-#dolnyP{
-    bottom: 143px;
-    transform: rotate(67deg);
-    left: 284px;
-    width: 134px;
+#bottomR{
+  bottom: 143px;
+  transform: rotate(67deg);
+  left: 284px;
+  width: 134px;
 }
 #c{
-    bottom: 85px;
-    left: 80px;
-    width: 300px;
+  bottom: 85px;
+  left: 80px;
+  width: 300px;
 }
-#pienG{
-    bottom: 65px;
-    left: 195px;
-    border-radius: 0;
+#trunkT{
+  bottom: 65px;
+  left: 195px;
+  border-radius: 0;
 }
-#pienL{
-    bottom: 35px;
-    left: 155px;
-    transform: rotate(90deg);
-    border-radius: 0 0 5px 5px;
+#trunkL{
+  bottom: 35px;
+  left: 155px;
+  transform: rotate(90deg);
+  border-radius: 0 0 5px 5px;
 }
 #e{
-    bottom: 5px;
-    left: 195px;
-    border-radius: 0;
+  bottom: 5px;
+  left: 195px;
+  border-radius: 0;
 }
 #d{
-    bottom: 35px;
-    left: 235px;
-    transform: rotate(90deg);
-    border-radius: 5px 5px 0 0;
+  bottom: 35px;
+  left: 235px;
+  transform: rotate(90deg);
+  border-radius: 5px 5px 0 0;
 }
-#wynik{
-    color: white;
-    font-family: "Cascadia Mono";
-    font-size: 18px;
-    resize: none;
-    overflow-y: scroll;
-    border: none;
-    white-space: pre;
-    outline: none;
+#result{
+  color: white;
+  font-family: "Cascadia Mono";
+  font-size: 18px;
+  resize: none;
+  overflow-y: scroll;
+  border: none;
+  white-space: pre;
+  outline: none;
 }
-#wynik::selection{
-    color: hsl(296 70% 18%);
-    background: hsla(0, 0%, 100%, 0.6);
+#result::selection{
+  color: hsl(296 70% 18%);
+  background: hsla(0, 0%, 100%, 0.6);
 }
 @media (min-width: 2400px){
-    .wizual{ transform: scale(2); }
-    #wynik{ font-size: 28px; }
+  .visual{ transform: scale(2); }
+  #result{ font-size: 28px; }
 }
 @media (min-width: 1700px){
-    .wizual{ transform: scale(1.6); }
-    #wynik{ font-size: 24px; }
+  .visual{ transform: scale(1.6); }
+  #result{ font-size: 24px; }
 }
 @media (min-width: 1300px){
-    .wizual{ transform: scale(1.2); }
+  .visual{ transform: scale(1.2); }
 }
 @media (max-width: 600px){
-    .blok{
-        min-width: 300px;
-        min-height: 300px;
-    }
-    .wizual{
-        width: 276px;
-        height: 252px;
-    }
-    .wizual > input{
-        width: 42px;
-        height: 6px;
-    }
-    .wizual > input::-moz-range-thumb{
-        width: 10px;
-        height: 10px;
-        border-radius: 3px;
-    }
-    .wizual > input::-webkit-slider-thumb{
-        width: 10px;
-        height: 10px;
-        border-radius: 3px;
-    }
-    .linia{
-        width: 42px;
-        height: 6px;
-    }
-    #wynik{ font-size: 10px; }
-    #kropka{
-        width: 10px;
-        height: 10px;
-        left: 133.5px;
-        bottom: 234px;
-        border-radius: 3px;
-    }
-    #gornyL{
-        bottom: 184px;
-        left: 33px;
-        width: 132px;
-    }
-    #gornyP{
-        bottom: 184px;
-        left: 110px;
-        width: 132px;
-    }
-    #a{
-        bottom: 132px;
-        width: 156px;
-        left: 60px;
-    }
-    #b{
-        bottom: 121px;
-        width: 120px;
-        left: 78px;
-    }
-    #dolnyL{
-        bottom: 86px;
-        left: 25px;
-        width: 80px;
-    }
-    #dolnyP{
-        bottom: 86px;
-        left: 170px;
-        width: 80px;
-    }
-    #c{
-        bottom: 51px;
-        left: 48px;
-        width: 180px;
-    }
-    #pienG{
-        bottom: 39px;
-        left: 118px;
-    }
-    #pienL{
-        bottom: 21px;
-        left: 95px;
-        border-radius: 0 0 5px 5px;
-    }
-    #e{
-        bottom: 3px;
-        left: 118px;
-    }
-    #d{
-        bottom: 21px;
-        left: 141px;
-    }
+  .block{
+    min-width: 300px;
+    min-height: 300px;
+  }
+  .visual{
+    width: 276px;
+    height: 252px;
+  }
+  .visual > input{
+    width: 42px;
+    height: 6px;
+  }
+  .visual > input::-moz-range-thumb{
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+  }
+  .visual > input::-webkit-slider-thumb{
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+  }
+  .line{
+    width: 42px;
+    height: 6px;
+  }
+  #result{ font-size: 10px; }
+  #dot{
+    width: 10px;
+    height: 10px;
+    left: 133.5px;
+    bottom: 234px;
+    border-radius: 3px;
+  }
+  #topL{
+    bottom: 184px;
+    left: 33px;
+    width: 132px;
+  }
+  #topR{
+    bottom: 184px;
+    left: 110px;
+    width: 132px;
+  }
+  #a{
+    bottom: 132px;
+    width: 156px;
+    left: 60px;
+  }
+  #b{
+    bottom: 121px;
+    width: 120px;
+    left: 78px;
+  }
+  #bottomL{
+    bottom: 86px;
+    left: 25px;
+    width: 80px;
+  }
+  #bottomP{
+    bottom: 86px;
+    left: 170px;
+    width: 80px;
+  }
+  #c{
+    bottom: 51px;
+    left: 48px;
+    width: 180px;
+  }
+  #trunkT{
+    bottom: 39px;
+    left: 118px;
+  }
+  #trunkL{
+    bottom: 21px;
+    left: 95px;
+    border-radius: 0 0 5px 5px;
+  }
+  #e{
+    bottom: 3px;
+    left: 118px;
+  }
+  #d{
+    bottom: 21px;
+    left: 141px;
+  }
 }
-

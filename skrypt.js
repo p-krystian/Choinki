@@ -1,57 +1,57 @@
-// Zmienne i stale
-const suwakA = document.querySelector('#a');
-const suwakB = document.querySelector('#b');
-const suwakC = document.querySelector('#c');
-const suwakD = document.querySelector('#d');
-const suwakE = document.querySelector('#e');
-const wynik = document.getElementById('wynik');
+// Variables and constants
+const rangeA = document.querySelector('#a');
+const rangeB = document.querySelector('#b');
+const rangeC = document.querySelector('#c');
+const rangeD = document.querySelector('#d');
+const rangeE = document.querySelector('#e');
+const result = document.querySelector('#result');
 const info = document.querySelector('.info');
 let aV, bV, cV, dV, eV;
-let akcja = 'change';
-if (innerHeight < innerWidth) akcja = 'mousemove';
-let aktualneDrzewko;
-// Funkcje
-function sprawdzanie(){
-    while (suwakA.valueAsNumber < suwakB.valueAsNumber) suwakA.valueAsNumber += 2;
-    while (suwakA.valueAsNumber > suwakC.valueAsNumber) suwakC.valueAsNumber += 2;
-    while (suwakC.valueAsNumber < suwakB.valueAsNumber) suwakC.valueAsNumber += 2;
-    while (suwakE.valueAsNumber >= suwakC.valueAsNumber) suwakE.valueAsNumber -= 2;
-    zastosuj();
+let action = 'change';
+if (innerHeight < innerWidth) action = 'mousemove';
+let currentTree;
+// Functions
+function apply(){
+    aV = rangeA.valueAsNumber;
+    bV = rangeB.valueAsNumber;
+    cV = rangeC.valueAsNumber;
+    dV = rangeD.valueAsNumber;
+    eV = rangeE.valueAsNumber;
+    currentTree = `${tree(aV, bV, cV, dV, eV)}`;
+    result.innerHTML = currentTree;
 }
-function zastosuj(){
-    aV = suwakA.valueAsNumber;
-    bV = suwakB.valueAsNumber;
-    cV = suwakC.valueAsNumber;
-    dV = suwakD.valueAsNumber;
-    eV = suwakE.valueAsNumber;
-    aktualneDrzewko = `${drzewko(aV, bV, cV, dV, eV)}`;
-    wynik.innerHTML = aktualneDrzewko;
+function checking(){
+    while (+rangeA.value < +rangeB.value) rangeA.valueAsNumber += 2;
+    while (+rangeA.value > +rangeC.value) rangeC.valueAsNumber += 2;
+    while (+rangeC.value < +rangeB.value) rangeC.valueAsNumber += 2;
+    while (+rangeE.value >= +rangeC.value) rangeE.valueAsNumber -= 2;
+    apply();
 }
-function drzewko(a, b, c, d, e){
-    let choinka = '';
-    for (let i = 1; i <= a; i += 2) choinka += `${tworzenieLini(c, i)}\n`;
-    for (let i = b; i <= c; i += 2) choinka += `${tworzenieLini(c, i)}\n`;
-    for (let i = 0; i < d; i++) choinka += `${tworzenieLini(c, e)}\n`;
-    return choinka;
+function tree(a, b, c, d, e){
+    let chTree = '';
+    for (let i = 1; i <= a; i += 2) chTree += `${createLine(c, i)}\n`;
+    for (let i = b; i <= c; i += 2) chTree += `${createLine(c, i)}\n`;
+    for (let i = 0; i < d; i++) chTree += `${createLine(c, e)}\n`;
+    return chTree;
 }
-function tworzenieLini(dlugoscLini, iloscHashow){
-    let iloscKropek = (dlugoscLini - iloscHashow) / 2;
-    let linia = '';
-    for (let i = 0; i < iloscKropek; i++) linia += '.';
-    for (let i = 0; i < iloscHashow; i++) linia += '#';
-    for (let i = 0; i < iloscKropek; i++) linia += '.';
-    return linia;
+function createLine(lineLenght, hashCount){
+    let dotCount = (lineLenght - hashCount) / 2;
+    let line = '';
+    for (let i = 0; i < dotCount; i++) line += '.';
+    for (let i = 0; i < hashCount; i++) line += '#';
+    for (let i = 0; i < dotCount; i++) line += '.';
+    return line;
 }
-function skopiuj(){
-    wynik.select();    
+function copy(){
+    result.select();
     document.execCommand('copy');
-    info.style.animationName = 'wysun';
+    info.style.animationName = 'eject';
     setTimeout(() => {info.style.animationName = '';}, 3000);
 }
-// Wywolanie
-window.onLoad = setTimeout(zastosuj, 100);
-suwakA.addEventListener(akcja, sprawdzanie);
-suwakB.addEventListener(akcja, sprawdzanie);
-suwakC.addEventListener(akcja, sprawdzanie);
-suwakD.addEventListener(akcja, sprawdzanie);
-suwakE.addEventListener(akcja, sprawdzanie);
+// Run
+window.onload = setTimeout(apply, 100);
+rangeA.addEventListener(action, checking);
+rangeB.addEventListener(action, checking);
+rangeC.addEventListener(action, checking);
+rangeD.addEventListener(action, checking);
+rangeE.addEventListener(action, checking);
