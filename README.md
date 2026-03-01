@@ -2,7 +2,7 @@
   <img src="favicon.svg" alt="Choinki Logo" height="120" />
 </p>
 
-# Christmas Tree Generator ✨
+# Choinki - Christmas Tree Generator ✨
 
 Simple generator of Christmas trees with dots and hashes.\
 Only work with monospaced fonts.
@@ -13,14 +13,6 @@ Only work with monospaced fonts.
 - **Interface language**: `PL`
 - **Technology**: Pure JavaScript (vanilla JS)
 - **Purpose**: Generate festive ASCII Christmas trees
-
-## ✨ Features
-
-- 🎄 **Dynamic Tree Generation**: Create unique Christmas trees with customizable parameters
-- 🎨 **Dot & Hash Patterns**: Visual variety using different characters
-- 📱 **Monospaced Font Compatible**: Perfectly aligned ASCII art
-- 🇵🇱 **Polish Interface**: User-friendly interface in Polish language
-- 💻 **Pure JavaScript**: No dependencies, lightweight and fast
 
 ## 🛠️ Tech Stack
 
@@ -35,11 +27,6 @@ Only work with monospaced fonts.
 2. Open `index.html` in your web browser
 3. Configure tree parameters
 4. Copy your Christmas tree!
-
-## 📋 Requirements
-
-- Modern web browser with JavaScript support
-- Monospaced font (Courier New, Consolas, Monaco, etc.)
 
 ## 🎯 How It Works
 
